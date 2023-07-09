@@ -94,6 +94,8 @@ services:
     volumes:
       - ./teamcity_data:/data/teamcity_server/datadir
       - ./teamcity_log:/opt/teamcity/logs
+    environment:
+      - TEAMCITY_HTTPS_PROXY_ENABLED=true
     depends_on:
       - teamcity-db
 
