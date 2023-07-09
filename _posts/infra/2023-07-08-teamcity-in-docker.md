@@ -110,6 +110,9 @@ services:
     environment:
       - DOCKER_IN_DOCKER=start
 ```
+> 포스팅 완료 후 상단에 `Incorrect proxy server configuration detected: Insecure Tomcat connector attributes`와 같은 경고가 발생하여
+> `teamcity` 컨테이너의 `environment`에 `TEAMCITY_HTTPS_PROXY_ENABLED=true`를 추가하였다.
+> [Insecure Tomcat connector attributes: missing secure attributes](https://youtrack.jetbrains.com/issue/TW-68935/Insecure-Tomcat-connector-attributes-missing-secure-attributes)를 참고하였다.
 
 #### 3. `Agent`용 설정 파일 추가
 1. `Agent`용 설정 파일 경로 생성 및 설정파일 작성
