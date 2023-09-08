@@ -4,7 +4,7 @@ title: TeamCity 설치 - docker-compose
 date: 2023-07-08 12:06
 description: docker-compose 설정으로 Teamcity를 설치하는 방법에 대해 기술 한다.
 comments: true
-categories: [Infra]
+categories: [Infra, TeamCity]
 tags: [TeamCity, Docker, Infra, Setting]
 ---
 
