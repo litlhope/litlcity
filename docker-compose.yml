@@ -10,7 +10,7 @@ services:
     volumes:
       - .:/srv/jekyll
     ports:
-      - "25891:4000"
+      - "55901:4000"
     entrypoint: ["sh", "-c"]
     command:
       - |
