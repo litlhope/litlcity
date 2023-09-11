@@ -18,7 +18,7 @@ timezone: Asia/Seoul
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: litlcity # the main title
+title: litlcity in BUD-IT # the main title
 
 tagline: 일상 및 관심사 공유 # it will display as the sub-title
 
@@ -26,7 +26,7 @@ description: >- # used by seo meta and the atom feed
   다 날려먹고 다시 작성해 보는 블로그
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: ""
+url: "https://blog.bud-it.com"
 
 github:
   username: litlhope # change to your github username
