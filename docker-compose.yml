@@ -4,15 +4,16 @@ services:
   litlcity:
     container_name: litlcity
     platform: linux/amd64
-    image: jekyll/jekyll:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
     environment:
       - JEKYLL_ENV=development
-    volumes:
-      - .:/srv/jekyll
     ports:
       - "55901:4000"
     entrypoint: ["sh", "-c"]
     command:
       - |
         bundle install
+        jekyll build
         jekyll serve --watch --host 0.0.0.0
