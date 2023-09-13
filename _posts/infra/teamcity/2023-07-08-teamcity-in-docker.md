@@ -287,13 +287,13 @@ Creating teamcity           ... done
 > `TeamCity` 서버에 접속하여 초기 설정을 진행한다.
 
 ### 1. `TeamCity` 서버 접속
-![TeamCity First Start](/assets/img/post/infra/teamcity-in-docker/001.png)
+![TeamCity First Start](/assets/img/post/infra/teamcity/teamcity-in-docker/001.png)
 * `https://your.teamcity.domain`로 접속한다.
    * `your.teamcity.domain`은 `TeamCity` 서버의 도메인 주소를 입력한다.
 * `Proceed`를 클릭하여 다음으로 이동한다. 기존 데이터를 복구 할 때는 `Restore from backup`를 클릭하여 복구를 진행한다.
 
 ### 2. DB 연결 설정
-![Database connection setup](/assets/img/post/infra/teamcity-in-docker/002.png)
+![Database connection setup](/assets/img/post/infra/teamcity/teamcity-in-docker/002.png)
 1. `Select the database type`의 값을 `MySQL`로 선택한다.
    * 별도로 DB 설정하지 않고, `Internal(HSQLDB)`를 선택하여 사용할 수도 있다.
 2. `Download JDBC driver` 버튼을 클릭하여 DB 드라이버를 다운로드한다.
@@ -309,7 +309,7 @@ DB 생성 및 초기화가 완료되면, `TeamCity` 라이센스 동의 화면(`
 맨 하단으로 스크롤하여 `Accept license agreement`를 체크 후 활성화 되는 `Continue` 버튼을 클릭하여 다음으로 이동한다.
 
 ### 4. 관리자 계정 생성
-![Create administrator account](/assets/img/post/infra/teamcity-in-docker/003.png)
+![Create administrator account](/assets/img/post/infra/teamcity/teamcity-in-docker/003.png)
 1. 생성 할 관리자의 ID/Password를 입력한다.
 2. `Create Account` 버튼을 클릭하여 관리자 계정을 생성한다.
 
@@ -317,19 +317,19 @@ DB 생성 및 초기화가 완료되면, `TeamCity` 라이센스 동의 화면(`
 > 초기설정 완료 후 `Agent` 설정 및 도메인, Email 알림 설정 방법에 대해 알아본다.
 
 ### 1. `Agent` 설정
-![TeamCity Agent](/assets/img/post/infra/teamcity-in-docker/004.png)
+![TeamCity Agent](/assets/img/post/infra/teamcity/teamcity-in-docker/004.png)
 1. 상단 메뉴에서 `Agents`를 클릭한다.
 2. `Unauthorized` 항목 하위의 `Agent`를 클릭한다.
    * `docker-compose`를 통해 추가된 `Agent-001`이 목록이 표시된다. 이를 클릭한다.
    * 목록이 표시되지 않은 경우 `Unauthorized`왼편의 `>`를 클릭하여 하위 목록을 표시한다.
 
-![Authorize Agent-001](/assets/img/post/infra/teamcity-in-docker/005.png)
+![Authorize Agent-001](/assets/img/post/infra/teamcity/teamcity-in-docker/005.png)
 1. `Authorize...` 버튼을 클릭하여 `Authorize Agent-001` 다이얼로그를 표시한다.
 2. 필요한 경우 `Agent`에 대한 설명을 기입한다.
 3. `Authorize` 버튼을 클릭하여 `Agent`를 인증한다.
 
 ### 2. 도메인 설정
-![TeamCity Administration](/assets/img/post/infra/teamcity-in-docker/006.png)
+![TeamCity Administration](/assets/img/post/infra/teamcity/teamcity-in-docker/006.png)
 1. 상단 메뉴에서 `Administration`를 클릭한다.
 2. 좌측 메뉴에서 `Server Administration` > `Global Settings`를 클릭한다.
 3. `Server URL`의 값을 `https://your.teamcity.domain`으로 변경한다.
@@ -339,7 +339,7 @@ DB 생성 및 초기화가 완료되면, `TeamCity` 라이센스 동의 화면(`
 5. `Save` 버튼을 클릭하여 저장한다.
 
 ### 3. Email 알림 설정
-![TeamCity Administration](/assets/img/post/infra/teamcity-in-docker/007.png)
+![TeamCity Administration](/assets/img/post/infra/teamcity/teamcity-in-docker/007.png)
 1. 좌측 메뉴에서 `Server Administration` > `Email Notifier`를 클릭한다.
 2. 자신의 SMTP 서버 정보를 입력한다. 참고로 Gmail(G-Suite)을 이용하는 경우 아래 값을 참고하여 입력한다.
    * `SMTP host` : `smtp.gmail.com`
