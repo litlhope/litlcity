@@ -1,6 +1,6 @@
 ---
 layout: post
-title: jekyll clean 명령시 'You have already activated public_suffix X, but your Gemfile requires public_suffix X. Prepending `bundle exec` to your command may solve this.' 오류 해결
+title: jekyll clean 명령시 'Gem::LoadError' 오류 해결
 date: 2023-09-11 15:20
 description: jekyll clean 시 발생하는 오류에 대한 조치
 comments: true
