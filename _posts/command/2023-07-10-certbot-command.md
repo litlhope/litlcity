@@ -58,6 +58,7 @@ If you like Certbot, please consider supporting our work by:
 
 #### 발생 할 수 있는 문제
 1. 웹서버가 80 포트를 점유
+
    ```shell
    $ sudo certbot certonly --cert-name nexus3 --standalone --agree-tos -d nexus3.bud-it.com
    Saving debug log to /var/log/letsencrypt/letsencrypt.log
@@ -106,7 +107,7 @@ Found the following certs:
 
 ### 3. 인증서 갱신
 ```shell
-$ sudo certbot certonly --force-renew --standalone -d sonar.bud-it.com
+$ sudo certbot certonly --force-renew --standalone -d yourdomain.com
 Saving debug log to /var/log/letsencrypt/letsencrypt.log
 ...
 ```
