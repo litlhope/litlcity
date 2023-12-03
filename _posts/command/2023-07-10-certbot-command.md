@@ -59,29 +59,29 @@ If you like Certbot, please consider supporting our work by:
 #### 발생 할 수 있는 문제
 1. 웹서버가 80 포트를 점유
 
-   ```shell
-   $ sudo certbot certonly --cert-name nexus3 --standalone --agree-tos -d nexus3.bud-it.com
-   Saving debug log to /var/log/letsencrypt/letsencrypt.log
-   Requesting a certificate for nexus3.bud-it.com
-   
-   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   Could not bind TCP port 80 because it is already in use by another process on
-   this system (such as a web server). Please stop the program in question and then
-   try again.
-   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   (R)etry/(C)ancel:
-   ```
-   - 해결 방법
-      - `c` 입력하여 발급 취소
-      - 웹서버를 중지
-        ```shell
-        $ sudo service nginx stop
-        ```
-      - `certbot` 명령어 실행
-      - 웹서버 재시작
-        ```shell
-        $ sudo service nginx start
-   ```
+```shell
+$ sudo certbot certonly --cert-name nexus3 --standalone --agree-tos -d nexus3.bud-it.com
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+Requesting a certificate for nexus3.bud-it.com
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Could not bind TCP port 80 because it is already in use by another process on
+this system (such as a web server). Please stop the program in question and then
+try again.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+(R)etry/(C)ancel:
+```
+- 해결 방법
+   - `c` 입력하여 발급 취소
+   - 웹서버를 중지
+```shell
+$ sudo service nginx stop
+```
+   - `certbot` 명령어 실행
+   - 웹서버 재시작
+```shell
+$ sudo service nginx start
+```
 
 ### 2. 발급된 인증서 목록 조회
 ```shell
