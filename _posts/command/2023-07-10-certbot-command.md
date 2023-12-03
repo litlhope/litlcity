@@ -81,7 +81,7 @@ If you like Certbot, please consider supporting our work by:
       - 웹서버 재시작
         ```shell
         $ sudo service nginx start
-        ```
+   ```
 
 ### 2. 발급된 인증서 목록 조회
 ```shell
