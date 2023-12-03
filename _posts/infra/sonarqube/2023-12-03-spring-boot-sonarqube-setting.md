@@ -120,10 +120,10 @@ plugins {
 // sonarqube
 sonarqube {
     properties {
-        property "sonar.host.url", "https://{{ SONARQUBE_DOMAIN }}"
-        property "sonar.token", "{{ SONARQUBE_TOKEN }}"
-        property "sonar.projectKey", "{{ PROJECT_UNIQUE_KEY }}"
-        property "sonar.projectName", "{{ PROJECT_NAME }}-${version}"
+        property "sonar.host.url", "https://{_{ SONARQUBE_DOMAIN }_}"
+        property "sonar.token", "{_{ SONARQUBE_TOKEN }_}"
+        property "sonar.projectKey", "{_{ PROJECT_UNIQUE_KEY }_}"
+        property "sonar.projectName", "{_{ PROJECT_NAME }_}-${version}"
         property "sonar.sources", "src/main"
         property "sonar.language", "java"
         property "sonar.sourceEncoding", "UTF-8"
@@ -136,10 +136,10 @@ sonarqube {
 }
 ```
 
-   - `{{ SONARQUBE_DOMAIN }}`: 미리 설치된 SonarQube URL을 입력한다.
-   - `{{ SONARQUBE_TOKEN }}`: 위 1번에서 발급한 SonarQube Token을 입력한다.
-   - `{{ PROJECT_UNIQUE_KEY }}`: 프로젝트 고유 값을 입력한다. 정적분석 이력 관리등에 프로젝트를 관리하는데 사용한다.
-   - `{{ PROJECT_NAME }}`: 나의 경우 프로젝트 고유값에 `build.gradle`에 설정된 버전을 suffix로 사용하여 프로젝트 명을 설정한다. SonarQube 화면에 표시되는 프로젝트 명이고, 버전별로 분석 결과 추이를 파악하는데 도움이 된다.
+   - `{_{ SONARQUBE_DOMAIN }_}`: 미리 설치된 SonarQube URL을 입력한다.
+   - `{_{ SONARQUBE_TOKEN }_}`: 위 1번에서 발급한 SonarQube Token을 입력한다.
+   - `{_{ PROJECT_UNIQUE_KEY }_}`: 프로젝트 고유 값을 입력한다. 정적분석 이력 관리등에 프로젝트를 관리하는데 사용한다.
+   - `{_{ PROJECT_NAME }_}`: 나의 경우 프로젝트 고유값에 `build.gradle`에 설정된 버전을 suffix로 사용하여 프로젝트 명을 설정한다. SonarQube 화면에 표시되는 프로젝트 명이고, 버전별로 분석 결과 추이를 파악하는데 도움이 된다.
    - 위에 설정 한 `Jacoco`의 `xml`보고서 경로 등 필요한 설정을 위 내용을 참고하여 추가해 준다.
 
 3. `SonarQube` 분석 실행.
