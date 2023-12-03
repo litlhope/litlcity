@@ -10,23 +10,23 @@ tags: [Infra, Jacoco, SonarQube, Spring boot, Setting]
 
 ## 시작하며...
 
-이번 포스팅에서는 Spring boot 프로젝트에 jacoco와 sonarqube를 설정하는 방법에 대해 알아보겠습니다.
+Spring boot 프로젝트에 jacoco와 sonarqube를 설정하는 방법에 대해 알아보겠습니다.
 
-## 이번 포스팅에서는...
+## 포스팅의 주요 내용
 
 이번 포스팅에서는 다음과 같은 내용을 다룹니다:
 
-1. jacoco와 sonarqube에 대한 간략한 소개
+1. jacoco와 sonarqube에 대한 상세한 소개
 2. Spring boot에 jacoco와 sonarqube를 설정하는 방법
 
 ## 각 도구에 대해
 ### jacoco란?
 
-jacoco는 자바 코드의 테스트 커버리지를 측정하는 도구입니다. 이를 통해 코드의 테스트가 얼마나 충분히 이루어졌는지를 확인할 수 있습니다.
+jacoco는 자바 코드의 테스트 커버리지를 측정하는 도구입니다. 이를 통해 코드의 테스트가 얼마나 충분히 이루어졌는지를 확인할 수 있습니다. 또한, jacoco는 높은 수준의 코드 커버리지를 제공하며, 코드의 품질을 향상시키는 데 도움이 됩니다.
 
 ### SonarQube란?
 
-SonarQube는 코드 품질을 관리하고 향상시키는 데 도움이 되는 오픈 소스 플랫폼입니다. 코드의 복잡성, 중복성, 테스트 커버리지, 코딩 표준 준수 여부 등을 체크할 수 있습니다.
+SonarQube는 코드 품질을 관리하고 향상시키는 데 도움이 되는 오픈 소스 플랫폼입니다. 코드의 복잡성, 중복성, 테스트 커버리지, 코딩 표준 준수 여부 등을 체크할 수 있습니다. 또한, SonarQube는 코드의 품질을 지속적으로 추적하고 개선할 수 있는 기능을 제공합니다.
 
 ## Spring boot 설정 방법
 
@@ -141,3 +141,4 @@ sonarqube {
 $ ./gradlew test sonar
 ```
 위와 같이 실행하면, 테스트 코드 실행 -> Jacoco 보고서 작성 -> SonarQube 분석 및 보고서 전송 이 진행 된다.
+
