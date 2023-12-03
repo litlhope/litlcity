@@ -34,6 +34,7 @@ Spring boot 프로젝트에 jacoco와 sonarqube를 설정하는 방법은 다음
 
 ### 1. jacoco 설정
 1. `build.gradle` 파일 설정
+
 ```gradle
 // ...
 
@@ -82,14 +83,17 @@ jacocoTestReport {
     }
 }
 ```
+
 위 설정 후 `./gradlew test`를 실행하면, `build/jacoco` 디렉토리에 `jacoco.xml` 파일과 `jacocoHtml` 디렉토리내에 HTML 리포트가 생성된다.
 
 > 현재는 테스트 코드가 제대로 작성되어 있지 않으므로, 코드 커버리지 기준(통과율 설정 등)은 설정에서 제외 합니다.
 
 ### 2. sonarqube 설정
+
 > 사내 `SonarQube` 서비스는 `docker-compose`를 이용하여 설정되어 있다. 서버 설정 방법은 별도 포스팅을 이용하여 설명 한다.
 
 1. `SonarQube` 토큰 발급
+
 ![SonarQube 토큰 발급](/assets/img/post/infra/sonarqube/spring-boot-sonarqube-setting/001.png)
    1. 화면 우측 상단의 아이콘을 클릭하여 사용 팝업 메뉴를 표시한다.
    2. 사용자 팝어 메뉴에서 `My Account` 메뉴를 클릭한다.
@@ -100,6 +104,7 @@ jacocoTestReport {
    5. `Generate` 버튼을 클릭하면 토큰이 발급 된다. 발급 된 토큰은 뒤에 설정 하는데 사용해야 하므로 잘 복사해 둔다.
 
 2. `build.gradle` 파일 설정
+
 ```gradle
 // ...
 
@@ -130,6 +135,7 @@ sonarqube {
     }
 }
 ```
+
    - `{{ SONARQUBE_DOMAIN }}`: 미리 설치된 SonarQube URL을 입력한다.
    - `{{ SONARQUBE_TOKEN }}`: 위 1번에서 발급한 SonarQube Token을 입력한다.
    - `{{ PROJECT_UNIQUE_KEY }}`: 프로젝트 고유 값을 입력한다. 정적분석 이력 관리등에 프로젝트를 관리하는데 사용한다.
@@ -137,8 +143,10 @@ sonarqube {
    - 위에 설정 한 `Jacoco`의 `xml`보고서 경로 등 필요한 설정을 위 내용을 참고하여 추가해 준다.
 
 3. `SonarQube` 분석 실행.
+
 ```shell
 $ ./gradlew test sonar
 ```
+
 위와 같이 실행하면, 테스트 코드 실행 -> Jacoco 보고서 작성 -> SonarQube 분석 및 보고서 전송 이 진행 된다.
 
