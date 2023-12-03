@@ -83,7 +83,52 @@ If you like Certbot, please consider supporting our work by:
         ```
 
 ### 2. 발급된 인증서 목록 조회
+```shell
+$ sudo certbot certificates
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Found the following certs:
+  Certificate Name: mycert
+    Serial Number: x4x3edxx81xxx00bxx2xa3xxxfxxexxdxxx
+    Key Type: RSA
+    Domains: exam.mycert.ce
+    Expiry Date: 2024-01-02 18:21:45+00:00 (VALID: 30 days)
+    Certificate Path: /etc/letsencrypt/live/mycert/fullchain.pem
+    Private Key Path: /etc/letsencrypt/live/mycert/privkey.pem
+
+  ...
+
+    Certificate Path: /etc/letsencrypt/live/zabbix/fullchain.pem
+    Private Key Path: /etc/letsencrypt/live/zabbix/privkey.pem
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+```
 
 ### 3. 인증서 갱신
+```shell
+$ sudo certbot certonly --force-renew --standalone -d sonar.bud-it.com
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+...
+```
+신규 인증서 발급과 마찬가지로, 80 포트를 이용하여 검증용 웹 서버를 띄워서 인증서를 발급 하므로, 잠시 80포트를 사용 중인 웹 서비스를 중지 후 처리해야 한다.
 
 ### 4. 인증서 삭제
+인증서 삭제는 인자를 주고, 원하는 인증서를 바로 삭제 할 수도 있고, 아래와 같이 대화형으로 삭제 할 수 있다.
+```shell
+$ sudo certbot delete
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+
+Which certificate(s) would you like to delete?
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+1: mycert
+
+...
+
+20: zabbix
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Select the appropriate numbers separated by commas and/or spaces, or leave input
+blank to select all options shown (Enter 'c' to cancel): c
+User ended interaction.
+Ask for help or search for solutions at https://community.letsencrypt.org. See the logfile /var/log/letsencrypt/letsencrypt.log or re-run Certbot with -v for more details.
+```
+위 예에서는 `c`(`cancel`)을 입력하여 삭제를 취소 하였지만, 삭제 할 인증서 이름 앞의 숫자를 입력하여 삭제를 진행 할 수 있다.
