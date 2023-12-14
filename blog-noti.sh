@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 슬랙 웹훅 URL 설정
-slack_webhook_url="https://hooks.slack.com/services/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"
+slack_webhook_url="https://hooks.slack.com/services/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"
 
 # 인자 확인
 if [ "$#" -ne 1 ]; then
