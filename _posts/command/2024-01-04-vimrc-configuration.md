@@ -5,7 +5,7 @@ date: 2024-01-04 16:20
 description: vim 설정 파일인 .vimrc에 대해서 정리 한다.
 comments: true
 categories: [Command]
-tags: [CLI, Command, certbot]
+tags: [CLI, Command, vim, Setting]
 ---
 
 개인적으로 사용하고 있는 `.vimrc` 설정 파일의 내용을 정리한다.
