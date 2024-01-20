@@ -38,3 +38,10 @@ Description:	Ubuntu 22.04.2 LTS
 Release:	22.04
 Codename:	jammy
 ```
+
+### 텍스트 파일 내용 확인
+#### 사례1: 첫 단어만 중복 제거하여 출력
+`{국가명} {지역명} ...` 형태의 텍스트 파일에서, 국가명만 중복 제거하여 출력해야 할 필요가 생겼다.
+```shell
+$ awk '{print $1}' foo-bar.txt | sort | uniq
+```
