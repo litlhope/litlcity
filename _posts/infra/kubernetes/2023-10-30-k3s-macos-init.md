@@ -47,7 +47,7 @@ tags: [ Kubernetes, K8s, K3s, Setting ]
    20.04                       focal             20231011         Ubuntu 20.04 LTS
    22.04                       jammy,lts         20231026         Ubuntu 22.04 LTS
    23.04                       lunar             20231025         Ubuntu 23.04
-   
+
    ...
    ```
    `Aliases`항목의 이름을 이용하여 가상머신을 생성한다. 나는 마지막 LTS 버전인 22.04버전(Aliases: `jammy`)를 사용하였다.
@@ -91,7 +91,7 @@ tags: [ Kubernetes, K8s, K3s, Setting ]
    ```shell
    $ K3S_NODEIP_MASTER="https://$(multipass info k3s-master | grep "IPv4" | awk -F' ' '{print $2}'):6443"
    $ K3S_TOKEN="$(multipass exec k3s-master -- /bin/bash -c "sudo cat /var/lib/rancher/k3s/server/node-token")"
-   
+
    $ echo $K3S_NODEIP_MASTER
    https://192.168.65.2:6443
    $ echo $K3S_TOKEN
@@ -137,7 +137,7 @@ tags: [ Kubernetes, K8s, K3s, Setting ]
    > 주의하자.
 
 ## 새롭게 알게된 내용
-쿠버네티스를 (`minikube`를 설치하여)공부하면서 쿠버네티스는 마스터노드와 워커노드를 구분하여 설치해서 설정한다고 하는데, `kubectl` 명령으로 
+쿠버네티스를 (`minikube`를 설치하여)공부하면서 쿠버네티스는 마스터노드와 워커노드를 구분하여 설치해서 설정한다고 하는데, `kubectl` 명령으로
 지금은 `minikube`를 관리하는데, 실제 환경에서 마스터노드에 어떻게 명령을 내리는 것인지 계속 의문이었다.
 이번 `k3s` 설정을 진행하면서, 각 마스터노드의 설정파일(위 예에서는 `k3s.yaml`)을 관리용 PC에 복사하여, `kubectl` 명령 사용시,
 `--kubeconfig` 옵션으로 해당 설정파일을 지정하여 사용하면, 마스터노드를 관리 할 수 있음을 알게 되었다.
